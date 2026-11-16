@@ -1,0 +1,13 @@
+.gcloudignore
+.git
+.github
+.env
+node_modules/
+vendor/
+storage/logs/*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+database/database.sqlite
+.DS_Store
+

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090b0e"/>
+      <stop offset="50%" stop-color="#111622"/>
+      <stop offset="100%" stop-color="#0a1917"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <rect x="24" y="24" width="464" height="464" rx="92" fill="none" stroke="#10b981" stroke-opacity="0.25" stroke-width="6"/>
+  <!-- 成長折線背景 -->
+  <path d="M96 368 L192 288 L272 320 L408 168" fill="none" stroke="url(#emeraldGrad)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="408" cy="168" r="22" fill="#34d399"/>
+  <!-- 貨幣符號 $ -->
+  <text x="245" y="295" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-weight="900" font-size="220" fill="url(#emeraldGrad)" text-anchor="middle">$</text>
+</svg>
+
