@@ -79,7 +79,9 @@ export const useAuthStore = defineStore('auth', () => {
     localStorage.removeItem('mymoney_gdrive_token_exp');
     localStorage.removeItem('mymoney_gdrive_file_id');
     localStorage.removeItem('mymoney_local_state');
-    updateSyncStatus('已登出 (請連接 Google Drive)', 'bg-zinc-400');
+    localStorage.removeItem('mymoney_local_backup_v2');
+    localStorage.removeItem('mymoney_pending_drive_sync');
+    updateSyncStatus('🎭 訪客展示模式 (隨機假資料・不儲存)', 'bg-indigo-400');
   }
 
   function updateSyncStatus(text, colorClass) {

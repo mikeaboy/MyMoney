@@ -186,7 +186,8 @@ async function handleInstallPwa() {
 }
 
 const GOOGLE_CLIENT_ID = '85808055000-dre50fq2k1esers9l3396s6lp5tidltl.apps.googleusercontent.com';
-const DRIVE_SCOPES = 'https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly openid email profile';
+// 遵循最小權限原則 (Least Privilege)：僅申請 drive.file (僅能存取本應用程式建立之單一檔案，無法讀取使用者雲端硬碟其他私人檔案)
+const DRIVE_SCOPES = 'https://www.googleapis.com/auth/drive.file openid email profile';
 
 let tokenClient = null;
 
@@ -313,6 +314,11 @@ function connectGoogleDrive() {
 }
 
 function handleLogout() {
+  if (localStorage.getItem('mymoney_pending_drive_sync') === '1') {
+    if (!confirm('⚠️ 您尚有未同步至 Google Drive 的本地變更，登出將會清除此裝置上的本地快取。確定要登出嗎？')) {
+      return;
+    }
+  }
   authStore.logout();
   store.loadState();
 }
